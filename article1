@@ -1,1 +1,33 @@
+<!DOCTYPE HTML>
 
+<html>
+	<head>
+		<title>article1</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link href="theme.css" rel="stylesheet">
+        <link rel="stylesheet" href="main.css" />
+	</head>
+
+    <body id="body2">
+    
+    <header id="header">
+        <a href="index.html" class="logo"><strong>Truth</strong> <span>About AI</span></a>
+        <nav>
+            <a href="#menu">Menu</a>
+        </nav>
+    </header>
+
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="index.html">Начало</a></li>
+            <li><a href="landing.html">За Нас</a></li>
+            <li><a href="generic.html">Нашите изследвания</a></li>
+            <li><a href="elements.html">Нашите анкети</a></li>
+            <li><a href="articles.html">Нашите статии</a></li>
+        </ul>
+        <ul class="actions stacked">
+            <li><a href="#" class="button primary fit">Get Started</a></li>
+            <li><a href="#" class="button fit">Log In</a></li>
+        </ul>
+    </nav>

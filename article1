@@ -9,6 +9,10 @@
         <link rel="stylesheet" href="main.css" />
 	</head>
 
+<style>
+.article { margin-bottom: 10px; padding: 20px; border: 3px solid whitesmoke; flex: 1; margin: 0 30px; box-sizing: border-box; }
+</style>
+
     <body id="body2">
     
     <header id="header">

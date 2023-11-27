@@ -177,7 +177,6 @@
 
 				}
 
-			// Event: Touch stuff.
 				$this.on('touchstart', function(event) {
 
 					$this.touchPosX = event.originalEvent.touches[0].pageX;
@@ -249,12 +248,10 @@
 
 				});
 
-			// Event: Prevent certain events inside the panel from bubbling.
 				$this.on('click touchend touchstart touchmove', function(event) {
 					event.stopPropagation();
 				});
 
-			// Event: Hide panel if a child anchor tag pointing to its ID is clicked.
 				$this.on('click', 'a[href="#' + id + '"]', function(event) {
 
 					event.preventDefault();
@@ -264,14 +261,11 @@
 
 				});
 
-		// Body.
 
-			// Event: Hide panel on body click/tap.
 				$body.on('click touchend', function(event) {
 					$this._hide(event);
 				});
 
-			// Event: Toggle.
 				$body.on('click', 'a[href="#' + id + '"]', function(event) {
 
 					event.preventDefault();
@@ -281,9 +275,7 @@
 
 				});
 
-		// Window.
 
-			// Event: Hide on ESC.
 				if (config.hideOnEscape)
 					$window.on('keydown', function(event) {
 
@@ -531,51 +523,43 @@
 			if (typeof $elements != 'jQuery')
 				$elements = $($elements);
 
-		// Step through elements.
 			$elements.each(function() {
 
 				var	$e = $(this), $p,
 					$parent = $e.parent();
 
-				// No parent? Bail.
 					if ($parent.length == 0)
 						return;
 
-				// Not moved? Move it.
 					if (!$e.data(key)) {
 
-						// Condition is false? Bail.
 							if (!condition)
 								return;
 
-						// Get placeholder (which will serve as our point of reference for when this element needs to move back).
+					
 							$p = $e.prev();
 
-							// Couldn't find anything? Means this element's already at the top, so bail.
 								if ($p.length == 0)
 									return;
 
-						// Move element to top of parent.
 							$e.prependTo($parent);
 
-						// Mark element as moved.
+
 							$e.data(key, $p);
 
 					}
 
-				// Moved already?
+
 					else {
 
-						// Condition is true? Bail.
 							if (condition)
 								return;
 
 						$p = $e.data(key);
 
-						// Move element back to its original location (using our placeholder).
+
 							$e.insertAfter($p);
 
-						// Unmark element as moved.
 							$e.removeData(key);
 
 					}
